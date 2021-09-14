@@ -21,10 +21,11 @@ function App() {
     if (query.trim()===''){
       const temp = await fetch(`https://api.jikan.moe/v3/top/anime/1/bypopularity`)
       .then(res => res.json())
-      SetAnimeList(temp.top.slice(0,25))
+      SetAnimeList(temp.top)
+      console.log(temp.top);
 
     }else{
-      const temp = await fetch(`https://api.jikan.moe/v3/search/anime?q=${query}&order_by=title&limit=15&sort=asc`)
+      const temp = await fetch(`https://api.jikan.moe/v3/search/anime?q=${query}&order_by=title&limit=20&sort=asc`)
       .then(res => res.json())
       SetAnimeList(temp.results)
     }

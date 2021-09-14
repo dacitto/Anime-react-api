@@ -8,7 +8,7 @@ function AnimeCard({anime}) {
                 <img src={anime.image_url} alt={`${anime.title} cover`} />
                 </div>
             </a>
-                <b>{anime.title}</b>
+                <p className='anime-title'>{anime.title}</p>
         </div>
     )
 }
